@@ -94,7 +94,7 @@ for output in layerOutputs:
 			boxes.append([x, y, int(width), int(height)])
 			confidences.append(float(confidence))
 			classIDs.append(classID)
-
+	 break # 我在这里添加了一个break，因为person在yolo中是第一个，而最外层循环是对每一个类别进行处理，所以，执行第一遍之后，终止循环即可
 # apply non-maxima suppression to suppress weak, overlapping bounding
 # boxes
 idxs = cv2.dnn.NMSBoxes(boxes, confidences, args["confidence"],
